@@ -1,0 +1,119 @@
+@import "common.scss";
+
+.radio-label {
+  @include respond(tablet) {
+    input[type="radio"] {
+      margin-top: 4px;
+    }
+  }
+}
+
+
+input[type="radio"] {
+  position: relative;
+  vertical-align: middle;
+  appearance: none;
+  border: 2px solid $color-grey;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  vertical-align: top;
+
+  @include respond(tablet) {
+    width: 16px;
+    height: 16px;
+    border-width: 1px;
+  }
+}
+
+input[type="radio"]:checked::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background-color: $color-pink;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -6px;
+  margin-left: -6px;
+  border-radius: 50%;
+
+  @include respond(tablet) {
+    width: 10px;
+    height: 10px;
+    margin-top: -5px;
+    margin-left: -5px;
+  }
+}
+
+input[type="radio"] + span {
+  padding-left: 3px;
+  display: inline-block;
+  line-height: 24px;
+  vertical-align: top;
+}
+
+.input {
+  background-color: $color-lightgrey;
+  border-radius: 7px;
+  outline: 0 !important;
+  height: 50px;
+  line-height: 28px;
+  padding: 5px 20px 7px;
+  border: none;
+  color: $color-black;
+  caret-color: $color-pink;
+  font-size: $h4-font-size;
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
+
+  &::placeholder {
+    color: $color-grey;
+  }
+
+  &.block {
+    width: 100%;
+  }
+
+  @include respond(tablet) {
+    height: 40px;
+    font-size: 14px;
+    line-height: 22px;
+    padding: 9px 16px;
+    border-radius: 6px;
+  }
+}
+
+
+.checkbox-group {
+  position: relative;
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+input[type="checkbox"] + label .checkbox-icn {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: url('../img/checkbox_off.svg');
+  background-size: 100% 100%;
+  margin-right: 6px;
+  vertical-align: top;
+
+  @include respond(tablet) {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+input[type="checkbox"]:checked + label .checkbox-icn {
+  background-image: url('../img/checkbox_on.svg');
+}

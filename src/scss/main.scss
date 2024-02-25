@@ -1,0 +1,503 @@
+@import "base.scss";
+
+body {
+  background-color: #FFEDED;
+}
+
+.main-panel {
+  position: relative;
+  @include respond(tablet) {
+    padding-top: 21px;
+  }
+}
+
+.section {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+
+.floating-flower-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: right;
+  cursor: pointer;
+  text-decoration: none;
+
+  .img-flower {
+    width: 189px;
+    position: absolute;
+    top: -15px;
+    right: 0;
+
+    @include respond(tablet) {
+      width: 130px;
+      top: -80px;
+      right: -34px;
+    }
+  }
+
+  .txt-wrap {
+    background: linear-gradient(90deg, rgba(255, 188, 204, 0.00) 0%, #FFC8D5 50.5%, rgba(255, 188, 204, 0.00) 100%);
+    margin-top: 100px;
+    padding: 29px 91px;
+
+    @include respond(tablet) {
+      margin-top: 0;
+      padding: 18px 58px;
+      margin-right: -34px;
+    }
+
+    p {
+      line-height: 27px;
+
+      span {
+        line-height: 31px;
+      }
+
+      @include respond(tablet) {
+        line-height: 17px;
+        font-size: 11px;
+
+        span {
+          font-size: 15px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+
+  .img-black-arrow {
+    width: 67px;
+    height: 67px;
+    margin-top: 15px;
+    margin-right: 91px;
+
+    @include respond(tablet) {
+      width: 27px;
+      height: 27px;
+      margin-top: -19px;
+      margin-right: 26px;
+    }
+  }
+}
+
+
+/* ==================================
+                section 1
+   ================================== */
+.section1 {
+  padding-top: 87px;
+
+  @include respond(tablet) {
+    padding-top: 21px;
+    padding-bottom: 28px;
+  }
+
+  .txt-column {
+    @include respond(desktop-over) {
+      align-items: flex-start;
+      padding-top: 55px;
+    }
+  }
+
+  .img-column {
+    @include respond(desktop-over) {
+      width: calc(300px + 15vw);
+      max-width: 600px;
+    }
+  }
+
+  .title {
+    font-size: 54px;
+    line-height: 130%;
+
+    @include respond(sm-desktop) {
+      font-size: $h2-font-size;
+    }
+
+    @include respond(tablet) {
+      font-size: $h3-font-size;
+    }
+  }
+
+  .desc {
+    line-height: 170%;
+    font-size: $h3-font-size;
+    padding-top: 29px;
+    padding-bottom: 40px;
+
+    @include respond(sm-desktop) {
+      font-size: 20px;
+    }
+
+    @include respond(tablet) {
+      line-height: 158%;
+      font-size: $h4-font-size;
+      padding-top: 15px;
+      padding-bottom: 23px;
+    }
+  }
+
+  .animate-img {
+    width: 100%;
+    height: auto;
+
+    @include respond(desktop-over) {
+      margin-bottom: -230px;
+
+      @include respond(sm-desktop) {
+        margin-bottom: max(-38.4%, -230px)
+      }
+    }
+
+    @include respond(tablet) {
+      width: 214px;
+    }
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row-reverse;
+
+    @include respond(desktop-over) {
+      justify-content: space-between;
+
+      width: 1260px;
+      max-width: 90%;
+
+      margin: 0 auto;
+      padding-left: 6vw;
+      white-space: nowrap;
+    }
+
+    @include respond(tablet) {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  .btn-main-section1 {
+    width: auto;
+    padding: 24px 45px;
+    font-size: $h3-font-size;
+    line-height: 31px;
+    font-weight: bold;
+
+    .icn-carrot {
+      width: 31px;
+      height: 31px;
+      vertical-align: top;
+      margin-right: 10px;
+    }
+
+    @include respond(sm-desktop) {
+      font-size: $h4-font-size;
+    }
+
+    @include respond(tablet) {
+      font-size: $h5-font-size;
+      margin: 0 auto;
+      width: calc(100% - 40px);
+      line-height: 20px;
+
+      .icn-carrot {
+        width: 20px;
+        height: 20px;
+        margin-right: 6px;
+      }
+    }
+  }
+}
+/* ==================================
+            section 1 - end
+   ================================== */
+/* ==================================
+                section 2
+   ================================== */
+.section2 {
+  @include respond(desktop-over) {
+    padding-bottom: 80px;
+  }
+
+  .main-box-lg {
+    display: flex;
+    justify-content: space-between;
+
+    width: max(calc(100% - 208px), 1560px);
+    max-width: 90%;
+    height: 592px;
+
+    margin: 0 auto 40px;
+
+    background-color: $color-white;
+    border-radius: 30px;
+    overflow: hidden;
+
+    @include respond(md-desktop) {
+      width: 90%;
+      margin: 0 auto 40px;
+      height: auto;
+    }
+
+    @include respond(tablet) {
+      position: relative;
+      overflow: visible;
+
+      flex-direction: column;
+      justify-content: flex-start;
+
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+
+      margin: 0 0 8px;
+      padding-bottom: 65px;
+      border-radius: 0;
+    }
+
+    .txt-column {
+      @include respond(desktop-over) {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        width: 43%;
+        max-width: 735px;
+
+        padding-top: min(7.1%, 120px);
+        padding-right: 10px;
+      }
+
+      @include respond(tablet) {
+        padding: 32px 20px;
+      }
+
+      @include respond(md-desktop) {
+        padding-top: max(calc(25vw - 330px), 30px);
+      }
+
+      .center-wrap {
+        @include respond(desktop-over) {
+          display: flex;
+          flex-direction: column;
+          align-items: baseline;
+
+          @include respond(sm-desktop) {
+            min-width: 320px;
+          }
+        }
+      }
+    }
+
+    .title {
+      line-height: 130%;
+
+      @include respond(desktop-over) {
+        @include respond(md-desktop) {
+          font-size: 42px;
+        }
+
+        @include respond(sm-desktop) {
+          font-size: 36px;
+        }
+      }
+    }
+
+    .desc {
+      color: $color-darkgrey;
+      line-height: 170%;
+      margin-top: 20px;
+
+      @include respond(desktop-over) {
+        @include respond(md-desktop) {
+          font-size: 20px;
+        }
+
+        @include respond(sm-desktop) {
+          font-size: 17px;
+          margin-top: 10px;
+        }
+      }
+
+      @include respond(tablet) {
+        margin-top: 5px;
+      }
+    }
+
+    .img-column {
+      img {
+        height: 100%;
+        width: auto;
+        vertical-align: top;
+      }
+
+      @include respond(only-md-desktop) {
+        width: 60%;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      @include respond(sm-desktop) {
+        width: 57%;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      @include respond(tablet) {
+        width: 100%;
+      }
+    }
+
+    .btn-main-more {
+      position: absolute;
+      display: flex;
+
+      bottom: 80px;
+
+      margin-top: min(14.9%, 78px);
+      padding: 26px 40px;
+
+      text-align: left;
+      line-height: 130%;
+
+      @include respond(sm-desktop) {
+        border-radius: 18px;
+        font-size: $h5-font-size;
+        padding: 15px 24px;
+        bottom: 30px;
+      }
+
+      @include respond(tablet) {
+        bottom: 30px;
+        left: 20px;
+        right: 20px;
+
+        margin: 0;
+
+        justify-content: center;
+        //text-align: left;
+      }
+
+      span {
+        font-weight: bold;
+        padding-left: 20px;
+      }
+
+      .icn-arrow {
+        display: inline-block;
+        width: 67px;
+        height: 67px;
+        vertical-align: top;
+
+        @include respond(sm-desktop) {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+  }
+}
+/* ==================================
+            section 1 - end
+   ================================== */
+
+
+/* ==================================
+                section 2
+   ================================== */
+.section3 {
+  background-color: $color-white;
+  padding: 200px 0;
+  max-width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  @include respond(md-desktop) {
+    display: block;
+
+    @include respond(desktop-over) {
+      padding-top: 160px;
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+  }
+
+  @include respond(tablet) {
+    padding: 32px 30px 102px 20px;
+  }
+
+  .title {
+    line-height: 130%;
+  }
+
+  .question {
+    color: $color-darkgrey;
+
+    @include respond(tablet) {
+      line-height: 135%;
+    }
+  }
+
+  .answer {
+    line-height: 170%;
+    padding-top: 16px;
+    color: $color-darkgrey;
+
+    @include respond(tablet) {
+      padding-top: 13px;
+      line-height: 25px;
+    }
+  }
+
+  ul {
+    padding-left: 126px;
+
+    @include respond(md-desktop) {
+      @include respond(desktop-over) {
+        padding-left: 32px;
+        padding-top: 80px;
+      }
+    }
+
+    @include respond(tablet) {
+      padding-left: 24px;
+      padding-top: 32px;
+    }
+  }
+
+  li {
+    position: relative;
+    padding-bottom: 80px;
+    line-height: 31px;
+
+    @include respond(tablet) {
+      padding-bottom: 40px;
+    }
+
+    &::before {
+      content: 'Q.';
+      color: $color-pink;
+      font-weight: bold;
+      font-size: $h3-font-size;
+      position: absolute;
+      left: -32px;
+      top: 0;
+
+      @include respond(tablet) {
+        font-size: $h5-font-size;
+        left: -24px;
+        line-height: 135%;
+      }
+    }
+  }
+}

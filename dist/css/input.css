@@ -1,0 +1,125 @@
+/*
+  variables
+*/
+/*
+  breakpoints
+*/
+/**
+  mixin
+ */
+@media (max-width: 1023px) {
+  .radio-label input[type=radio] {
+    margin-top: 4px;
+  }
+}
+
+input[type=radio] {
+  position: relative;
+  vertical-align: middle;
+  appearance: none;
+  border: 2px solid #cfcfcf;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  vertical-align: top;
+}
+@media (max-width: 1023px) {
+  input[type=radio] {
+    width: 16px;
+    height: 16px;
+    border-width: 1px;
+  }
+}
+
+input[type=radio]:checked::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-color: #FF7898;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -6px;
+  margin-left: -6px;
+  border-radius: 50%;
+}
+@media (max-width: 1023px) {
+  input[type=radio]:checked::after {
+    width: 10px;
+    height: 10px;
+    margin-top: -5px;
+    margin-left: -5px;
+  }
+}
+
+input[type=radio] + span {
+  padding-left: 3px;
+  display: inline-block;
+  line-height: 24px;
+  vertical-align: top;
+}
+
+.input {
+  background-color: #f0f0f0;
+  border-radius: 7px;
+  outline: 0 !important;
+  height: 50px;
+  line-height: 28px;
+  padding: 5px 20px 7px;
+  border: none;
+  color: #262626;
+  caret-color: #FF7898;
+  font-size: 17px;
+}
+.input:focus {
+  border: none;
+  outline: none;
+}
+.input::placeholder {
+  color: #cfcfcf;
+}
+.input.block {
+  width: 100%;
+}
+@media (max-width: 1023px) {
+  .input {
+    height: 40px;
+    font-size: 14px;
+    line-height: 22px;
+    padding: 9px 16px;
+    border-radius: 6px;
+  }
+}
+
+.checkbox-group {
+  position: relative;
+}
+
+input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+input[type=checkbox] + label .checkbox-icn {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: url("../img/checkbox_off.svg");
+  background-size: 100% 100%;
+  margin-right: 6px;
+  vertical-align: top;
+}
+@media (max-width: 1023px) {
+  input[type=checkbox] + label .checkbox-icn {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+input[type=checkbox]:checked + label .checkbox-icn {
+  background-image: url("../img/checkbox_on.svg");
+}
+
+/*# sourceMappingURL=input.css.map */

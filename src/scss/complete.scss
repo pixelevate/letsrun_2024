@@ -1,0 +1,40 @@
+@import "base.scss";
+
+
+.main-panel {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+}
+
+@include respond(desktop-over) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+
+    .main-panel {
+      flex: 1;
+    }
+  }
+}
+
+.main-panel {
+  @include respond(tablet) {
+    height: calc(100vh - $m-header-height);
+    padding-bottom: $m-header-height;
+  }
+}
+
+.img-complete {
+  width: 308px;
+  height: 308px;
+
+  @include respond(tablet) {
+    width: 198px;
+    height: 198px;
+  }
+}

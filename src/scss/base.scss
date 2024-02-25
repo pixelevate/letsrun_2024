@@ -1,0 +1,329 @@
+@import "common.scss";
+@import "buttons.scss";
+
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: bold;
+    font-display: swap;
+    src: local('Pretendard Bold'), url('../fonts/Pretendard-Bold.woff2') format('woff2'), url('../fonts/Pretendard-Bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: normal;
+    font-display: swap;
+    src: local('Pretendard Regular'), url('../fonts/Pretendard-Regular.woff2') format('woff2'), url('../fonts/Pretendard-Regular.woff') format('woff');
+}
+
+.h1 {
+    font-size: $h1-font-size;
+
+    &.respond {
+        @include respond(tablet) {
+            font-size: $h3-font-size;
+        }
+    }
+}
+.h2 {
+    font-size: $h2-font-size;
+
+    &.respond {
+        @include respond(tablet) {
+            font-size: $h3-font-size;
+        }
+    }
+}
+.h3 {
+    font-size: $h3-font-size;
+
+    &.respond {
+        @include respond(tablet) {
+            font-size: $h5-font-size;
+        }
+    }
+}
+.h4 {
+    font-size: $h4-font-size;
+}
+.h5 {
+    font-size: $h5-font-size;
+}
+
+.relative {
+    position: relative;
+}
+
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-align-center {
+    align-items: center;
+}
+
+.flex-justify-center {
+    justify-content: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.txt-center {
+    text-align: center;
+}
+
+.txt-pink {
+    color: $color-pink;
+}
+
+.txt-pink-2 {
+    color: $color-pink2;
+}
+
+p {
+    margin: 0;
+}
+
+* {
+    font-family: 'Pretendard', Arial, sans-serif;
+    font-weight: normal;
+    color: $color-black;
+}
+
+@include respond(tablet) {
+    .desktop-show {
+        display: none !important;
+    }
+}
+
+@include respond(not-mobile) {
+    .mobile-show {
+        display: none !important;
+    }
+}
+
+@include respond(desktop-over) {
+    .tablet-show {
+        display: none !important;
+    }
+}
+
+
+
+
+
+/* ==================================
+                 header
+   ================================== */
+.header {
+    position: relative;
+    width: 100%;
+    height: $header-height;
+    background-color: $color-white;
+
+    @include respond(tablet) {
+        height: $m-header-height;
+
+        &.open {
+            height: auto;
+            box-shadow: 0px 12px 23px rgba(0, 0, 0, 0.15);
+
+            nav {
+                display: block;
+                padding-left: 24px;
+            }
+
+            .btn-mobile-menu span {
+                background-color: $color-black;
+            }
+
+            .btn-mobile-menu span:nth-child(1) {
+                -webkit-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+                transform: rotate(45deg);
+                top: 0px;
+                left: 0px;
+                width: 23px;
+            }
+
+            .btn-mobile-menu span:nth-child(2) {
+                width: 0%;
+                opacity: 0;
+            }
+
+            .btn-mobile-menu span:nth-child(3) {
+                -webkit-transform: rotate(-45deg);
+                -moz-transform: rotate(-45deg);
+                -o-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                top: 16px;
+                left: 0px;
+                width: 23px;
+            }
+        }
+    }
+
+    nav {
+        width: 100%;
+
+        li {
+            display: inline-block;
+            line-height: $header-height;
+            font-size: $h5-font-size;
+
+            @include respond(tablet) {
+                display: block;
+                line-height: 45px;
+                font-weight: bold;
+            }
+
+            @include respond(desktop-over) {
+                & + li {
+                    margin-left: 55px;
+                }
+            }
+
+            &.active a {
+                color: $color-pink;
+                font-weight: bold;
+            }
+
+
+            a {
+                text-decoration: none;
+
+                @include respond(tablet) {
+                    font-weight: bold;
+                }
+            }
+        }
+
+        @include respond(tablet) {
+            display: none;
+            //padding-top: 69px;
+        }
+    }
+
+    .mobile-nav-title {
+        display: block;
+        margin: 0;
+
+        line-height: $m-header-height;
+
+        text-align: center;
+
+        color: $color-pink;
+        font-size: $h5-font-size;
+        font-weight: bold;
+    }
+}
+
+.btn-mobile-menu {
+    position: absolute;
+    top: 27px;
+    left: 24px;
+    width: 20px;
+    height: 18px;
+    margin: 0 auto;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+.btn-mobile-menu span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: $color-pink;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+
+/* Icon 4 */
+.btn-mobile-menu span:nth-child(1) {
+    top: 0px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+
+.btn-mobile-menu span:nth-child(2) {
+    top: 8px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+
+.btn-mobile-menu span:nth-child(3) {
+    top: 16px;
+    width: 13px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+
+
+
+.footer {
+    background-color: #FFF4BD;
+    text-align: center;
+    font-size: 13px;
+    padding: 83px 0;
+    line-height: 23px;
+    width: 100%;
+
+    @include respond(tablet) {
+        padding: 62px 0;
+        font-size: 11px;
+        color: $color-black;
+        line-height: 16px;
+    }
+}
+
+//@include image-2x("../img/NAME@2x.png", WIDTHpx, HEIGHTpx);

@@ -1,0 +1,13 @@
+{
+  "name": "simple-web-dev",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "concurrently \"lite-server\" \"sass --watch src/scss:src/css\"",
+    "build": "sass src/scss:dist/css && cp src/*.html dist/ && cp src/js/*.js dist/js/"
+  },
+  "devDependencies": {
+    "concurrently": "^6.0.0",
+    "lite-server": "^2.6.1",
+    "sass": "^1.32.8"
+  }
+}

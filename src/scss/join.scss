@@ -1,0 +1,294 @@
+@import "base.scss";
+@import "input.scss";
+@import "modal.scss";
+
+.main-panel {
+  padding-top: 29px;
+  text-align: center;
+}
+
+.img-join-title {
+  width: 494px;
+
+  @include respond(tablet) {
+    width: 248px;
+    max-width: 70%;
+  }
+}
+
+.title {
+  padding-top: 8px;
+
+  @include respond(tablet) {
+    line-height: 31px;
+  }
+}
+
+.form {
+  width: 850px;
+  margin: 0 auto;
+
+  padding-top: 60px;
+  padding-bottom: 215px;
+
+  text-align: left;
+
+  @include respond(tablet) {
+    width: calc(100vw - 40px);
+    padding-top: 46px;
+    padding-bottom: 37px;
+  }
+
+  .row {
+    @include respond(desktop-over) {
+      display: flex;
+      height: 50px;
+    }
+
+    & + .row:not(.agreement-row) {
+      margin-top: 24px;
+
+      @include respond(tablet) {
+        margin-top: 44px;
+      }
+    }
+
+    > .form-group, > .wrap {
+      flex: 1;
+    }
+
+    &.auto-row {
+      height: auto;
+    }
+  }
+
+  .label {
+    width: 290px;
+    line-height: 31px;
+    font-size: $h3-font-size;
+    font-weight: bold;
+
+    &.require::after {
+      content: '*';
+      color: $color-pink;
+      font-size: $h5-font-size;
+      font-weight: bold;
+      padding-left: 3px;
+    }
+
+    @include respond(tablet) {
+      line-height: 26px;
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .form-group {
+    font-size: $h3-font-size;
+
+    &.radio-form-group {
+      padding-top: 3px;
+    }
+
+    @include respond(tablet) {
+      font-size: $h5-font-size;
+    }
+  }
+
+  .input-row {
+    display: flex;
+
+    & + .input-row {
+      margin-top: 16px;
+    }
+
+    > .form-group {
+      flex: 1;
+    }
+
+    @include respond(tablet) {
+      display: block;
+    }
+  }
+
+  .radio-label + .radio-label {
+    margin-left: 40px;
+
+    @include respond(tablet) {
+      margin-left: 25px;
+    }
+  }
+
+  .btn-certificate {
+    height: 50px;
+    width: 125px;
+    margin-left: 20px;
+    font-size: $h4-font-size;
+
+    &:not(:disabled) {
+      font-weight: bold;
+    }
+
+    @include respond(tablet) {
+      width: 100px;
+      height: 40px;
+      font-size: 14px;
+      margin: 10px 0 0;
+    }
+  }
+
+  .checkbox-group {
+    font-size: $h4-font-size;
+    line-height: 24px;
+
+    @include respond(tablet) {
+      font-size: $h5-font-size;
+      line-height: 22px;
+    }
+  }
+
+  .border-top {
+    border-top: 1px solid #f0f0f0;
+    margin-top: 18px;
+    padding-top: 18px;
+    padding-bottom: 8px;
+
+    @include respond(tablet) {
+      margin-top: 8px;
+      padding-top: 14px;
+      padding-bottom: 4px;
+    }
+  }
+
+  .guide {
+    color: $color-pink;
+    font-size: $h5-font-size;
+    line-height: 25px;
+
+    @include respond(tablet) {
+      padding-left: 32px;
+      font-size: 13.5px;
+      line-height: 22px;
+    }
+  }
+
+  .popup-row {
+    justify-content: space-between;
+  }
+
+  .btn-popup {
+    font-size: $h4-font-size;
+
+    @include respond(tablet) {
+      font-size: $h5-font-size;
+      margin-left: 32px;
+      padding: 0;
+      margin-top: 5px;
+      line-height: 24px;
+    }
+  }
+
+  .agreement-row {
+    margin-top: 50px;
+  }
+
+
+  .btn-row {
+    display: flex;
+    margin-top: 70px;
+
+    @include respond(tablet) {
+      display: block;
+      margin-top: 43px;
+    }
+
+    > .btn {
+      height: 85px;
+      font-size: $h3-font-size;
+      font-weight: bold;
+      border-radius: 10px;
+
+      @include respond(tablet) {
+        width: 100% !important;
+        height: 60px;
+        font-size: $h4-font-size;
+      }
+    }
+
+    .btn-submit {
+      flex: 1;
+      opacity: 0.5;
+    }
+
+    .btn-faq {
+      width: 145px;
+      margin-left: 24px;
+      border-width: 2px;
+      line-height: 81px;
+
+      @include respond(tablet) {
+        margin-top: 7px;
+        margin-left: 0;
+        line-height: 56px;
+      }
+    }
+  }
+
+  .counter {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    color: $color-pink;
+    font-size: $h5-font-size;
+    line-height: 25px;
+
+    @include respond(tablet) {
+      top: 8px;
+      right: 16px;
+    }
+  }
+}
+
+.personal-modal {
+  .modal-body {
+    p {
+      color: $color-darkgrey !important;
+      font-size: $h5-font-size;
+      line-height: 25px;
+
+      span {
+        color: $color-darkgrey;
+      }
+
+      & + p {
+        padding-top: 10px
+      }
+
+      @include respond(tablet) {
+        font-size: 13px;
+      }
+    }
+  }
+
+  .guide-highlight {
+    text-decoration: underline;
+    font-size: $h4-font-size;
+    font-weight: bold;
+    color: $color-darkgrey;
+
+    @include respond(tablet) {
+      font-size: $h5-font-size;
+    }
+  }
+
+  .btn-close {
+    height: 77px;
+    width: 100%;
+    margin-top: 24px;
+    font-size: $h4-font-size;
+
+    @include respond(tablet) {
+      height: 55px;
+    }
+  }
+}

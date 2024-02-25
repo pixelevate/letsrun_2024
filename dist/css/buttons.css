@@ -1,0 +1,64 @@
+/*
+  variables
+*/
+/*
+  breakpoints
+*/
+/**
+  mixin
+ */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.btn.btn-round-lg {
+  border-radius: 30px;
+}
+@media (max-width: 1023px) {
+  .btn.btn-round-lg {
+    border-radius: 18px;
+  }
+}
+.btn.btn-pink {
+  background-color: #FF7898;
+  color: #fff;
+}
+.btn.btn-pink2 {
+  background-color: #FFA2B8;
+  color: #fff;
+}
+.btn.btn-grey {
+  background-color: #cfcfcf;
+}
+.btn.btn-lightgrey {
+  background-color: #f0f0f0;
+}
+.btn.btn-border {
+  border: 1px solid;
+  border-radius: 7px;
+}
+.btn.border-pink {
+  border-color: #FF7898;
+  color: #FF7898;
+  background-color: #fff;
+}
+.btn.border-pink2 {
+  border-color: #FFA2B8;
+  color: #FFA2B8;
+  background-color: #fff;
+}
+.btn.btn-transparent {
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=buttons.css.map */

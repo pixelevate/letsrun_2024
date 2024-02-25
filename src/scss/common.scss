@@ -1,0 +1,101 @@
+/*
+  variables
+*/
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;
+$sm-desktop: 1300px;
+$lg-desktop: 1681px;
+
+
+$header-height: 75px;
+$m-header-height: 70px;
+
+$h1-font-size: 50px;
+$h2-font-size: 46px;
+$h3-font-size: 24px;
+$h4-font-size: 17px;
+$h5-font-size: 15px;
+
+$color-pink: #FF7898;
+$color-pink2: #FFA2B8;
+
+$color-black: #262626;
+$color-white: #fff;
+
+$color-lightgrey: #f0f0f0;
+$color-grey: #cfcfcf;
+$color-darkgrey: #575757;
+
+
+/*
+  breakpoints
+*/
+$breakpoints: (
+        "xs-mobile": (
+                max-width: $mobile - 1,
+        ),
+        "mobile": (
+                max-width: $tablet - 1,
+        ),
+        "not-mobile": (
+                min-width: $tablet,
+        ),
+        "tablet": (
+                max-width: $desktop - 1,
+        ),
+        "desktop-over": (
+                min-width: $desktop,
+        ),
+        "sm-desktop": (
+                max-width: $sm-desktop - 1,
+        ),
+        "sm-desktop-over": (
+                min-width: $sm-desktop,
+        ),
+        "md-desktop": (
+                max-width: $lg-desktop - 1,
+        ),
+        "only-md-desktop": (
+                min-width: $sm-desktop,
+                max-width: $lg-desktop - 1,
+        ),
+);
+
+/**
+  mixin
+ */
+@mixin respond($size) {
+  $query-map: map-get($breakpoints, $size);
+  $max-width: map-get($query-map, max-width);
+  $min-width: map-get($query-map, min-width);
+
+  @if $max-width and $min-width {
+    @media (min-width: #{$min-width}) and (max-width: #{$max-width}) {
+      @content;
+    }
+  }
+  @else if $max-width {
+    @media (max-width: #{$max-width}) {
+      @content;
+    }
+  }
+  @else if $min-width {
+    @media (min-width: #{$min-width}) {
+      @content;
+    }
+  }
+}
+
+@mixin image-2x($image, $width, $height) {
+  @media (-webkit-min-device-pixel-ratio: 2),
+  (min--moz-device-pixel-ratio: 2),
+  (-o-min-device-pixel-ratio: 2/1),
+  (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+    /* on retina, use image that's scaled by 2 */
+    background-image: url($image);
+    background-size: $width $height;
+  }
+}

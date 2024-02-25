@@ -1,0 +1,64 @@
+@import "common.scss";
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &.btn-round-lg {
+    border-radius: 30px;
+
+    @include respond(tablet) {
+      border-radius: 18px;
+    }
+  }
+
+  &.btn-pink {
+    background-color: $color-pink;
+    color: $color-white;
+  }
+
+  &.btn-pink2 {
+    background-color: $color-pink2;
+    color: $color-white;
+  }
+
+  &.btn-grey {
+    background-color: $color-grey;
+  }
+
+  &.btn-lightgrey {
+    background-color: $color-lightgrey;
+  }
+
+  &.btn-border {
+    border: 1px solid;
+    border-radius: 7px;
+  }
+
+  &.border-pink {
+    border-color: $color-pink;
+    color: $color-pink;
+    background-color: $color-white;
+  }
+
+  &.border-pink2 {
+    border-color: $color-pink2;
+    color: $color-pink2;
+    background-color: $color-white;
+  }
+
+  &.btn-transparent {
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+  }
+}
