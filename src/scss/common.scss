@@ -53,6 +53,9 @@ $breakpoints: (
         "sm-desktop-over": (
                 min-width: $sm-desktop,
         ),
+        "md-desktop-over": (
+                min-width: $lg-desktop,
+        ),
         "md-desktop": (
                 max-width: $lg-desktop - 1,
         ),

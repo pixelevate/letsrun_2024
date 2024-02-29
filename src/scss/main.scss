@@ -6,9 +6,9 @@ body {
 
 .main-panel {
   position: relative;
-  @include respond(tablet) {
-    padding-top: 21px;
-  }
+  //@include respond(tablet) {
+  //  padding-top: 21px;
+  //}
 }
 
 .section {
@@ -19,34 +19,43 @@ body {
 
 .floating-flower-wrap {
   position: absolute;
+  z-index: 1;
   top: 0;
   right: 0;
   text-align: right;
   cursor: pointer;
   text-decoration: none;
 
-  .img-flower {
-    width: 189px;
+  .img-wrap {
     position: absolute;
     top: -15px;
     right: 0;
+    width: 189px;
+    overflow: hidden;
 
     @include respond(tablet) {
       width: 130px;
       top: -80px;
-      right: -34px;
+    }
+
+    .img-flower {
+      width: 100%;
+
+      @include respond(tablet) {
+        margin-right: -34px;
+      }
     }
   }
 
   .txt-wrap {
-    background: linear-gradient(90deg, rgba(255, 188, 204, 0.00) 0%, #FFC8D5 50.5%, rgba(255, 188, 204, 0.00) 100%);
+    background: linear-gradient(90deg, rgba(255, 188, 204, 0) 0%, #FFC8D5 80%, rgba(255, 188, 204, 0.3) 100%);
     margin-top: 100px;
     padding: 29px 91px;
 
     @include respond(tablet) {
       margin-top: 0;
-      padding: 18px 58px;
-      margin-right: -34px;
+      padding: 18px 24px 18px 38px;
+      //margin-right: -34px;
     }
 
     p {
@@ -91,7 +100,10 @@ body {
   padding-top: 87px;
 
   @include respond(tablet) {
-    padding-top: 21px;
+    position: relative;
+    z-index: 1;
+
+    padding-top: 0;
     padding-bottom: 28px;
   }
 
@@ -144,16 +156,17 @@ body {
     width: 100%;
     height: auto;
 
-    @include respond(desktop-over) {
-      margin-bottom: -230px;
+    @include respond(md-desktop-over) {
+      margin-bottom: -190px;
+    }
 
-      @include respond(sm-desktop) {
-        margin-bottom: max(-38.4%, -230px)
-      }
+    @include respond(md-desktop) {
+      margin-bottom: max(-34.5%, -190px)
     }
 
     @include respond(tablet) {
       width: 214px;
+      margin-bottom: 0;
     }
   }
 
@@ -276,7 +289,7 @@ body {
       }
 
       @include respond(md-desktop) {
-        padding-top: max(calc(25vw - 330px), 30px);
+        padding-top: min(5.6%, 96px);
       }
 
       .center-wrap {
@@ -297,7 +310,7 @@ body {
 
       @include respond(desktop-over) {
         @include respond(md-desktop) {
-          font-size: 42px;
+          font-size: 36px;
         }
 
         @include respond(sm-desktop) {
@@ -313,7 +326,7 @@ body {
 
       @include respond(desktop-over) {
         @include respond(md-desktop) {
-          font-size: 20px;
+          font-size: 19px;
         }
 
         @include respond(sm-desktop) {
@@ -369,6 +382,12 @@ body {
       text-align: left;
       line-height: 130%;
 
+      @include respond(md-desktop) {
+        padding: 20px 32px;
+        font-size: 19px;
+        bottom: 64px;
+      }
+
       @include respond(sm-desktop) {
         border-radius: 18px;
         font-size: $h5-font-size;
@@ -397,6 +416,11 @@ body {
         width: 67px;
         height: 67px;
         vertical-align: top;
+
+        @include respond(md-desktop) {
+          width: 53px;
+          height: 53px;
+        }
 
         @include respond(sm-desktop) {
           width: 40px;

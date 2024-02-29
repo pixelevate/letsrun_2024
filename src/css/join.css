@@ -7,6 +7,15 @@
 /**
   mixin
  */
+/*
+  variables
+*/
+/*
+  breakpoints
+*/
+/**
+  mixin
+ */
 .btn {
   display: inline-block;
   text-decoration: none;
@@ -364,6 +373,15 @@ p {
   }
 }
 
+/*
+  variables
+*/
+/*
+  breakpoints
+*/
+/**
+  mixin
+ */
 @media (max-width: 1023px) {
   .radio-label input[type=radio] {
     margin-top: 4px;
@@ -479,6 +497,15 @@ input[type=checkbox]:checked + label .checkbox-icn {
   background-image: url("../img/checkbox_on.svg");
 }
 
+/*
+  variables
+*/
+/*
+  breakpoints
+*/
+/**
+  mixin
+ */
 .modal {
   position: fixed;
   z-index: 2;
